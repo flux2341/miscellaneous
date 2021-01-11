@@ -1,0 +1,341 @@
+
+
+
+
+
+
+
+introduction
+    rendering algorithms
+    ray tracing algorithms
+        forward ray tracing
+            very inefficient as most rays won't hit the camera
+        backward ray tracing - direct illumination
+        backward ra ytracing - path tracing
+            color bleeding
+        bidirectional ray tracing
+        photon mapping - capture caustics
+        metropolis light transport
+linear algebra
+    geometric primitives
+        point - position
+        vector - direction
+        normal - perpendicular to a surface
+        ray - position and direction
+    2d
+        translation
+        scaling
+        rotation
+    3d
+        translation
+        scaling
+        rotation
+    representation as matrices
+camera
+    perspective camera
+shapes
+    sphere
+    cube
+materials
+    lambertian
+    phong
+    reflection
+    refraction
+lights
+    point lights
+    spot light
+    area lights
+putting it all together
+    supersampling - uniform vs random vs stratified
+advanced
+    brdf - bidirectional reflectance distribution functions
+    spectral power distribution
+    triangle meshes
+    textures - grid, checkerboard
+    ray intersection acceleration
+        octree
+        kd-tree
+        bsp tree
+    multiple importance sampling
+    subsurface scattering
+
+
+links
+    webgl path tracer: http://madebyevan.com/webgl-path-tracing/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+================================================
+================================================
+================================================
+================================================
+================================================
+================================================
+================================================
+
+
+
+
+https://cs184.eecs.berkeley.edu/sp16/lecture/reflection
+
+https://www.scratchapixel.com/lessons/3d-basic-rendering/minimal-ray-tracer-rendering-simple-shapes/
+
+https://learning.oreilly.com/library/view/advanced-global-illumination/9781439864951/
+
+
+
+building
+    rendering algorithms
+            
+        raytracing
+            
+
+
+    renderers
+        diasil: https://github.com/flux2341/Diasil
+        http://madebyevan.com/webgl-path-tracing/
+        not used
+            https://lighttracer.org/
+    3d geometry and transformations
+        example of 2d transformations - https://codepen.io/flux2341/pen/yXeLJj
+        example of rendering a wireframe - https://codepen.io/flux2341/details/ZKmNvV
+    simply ray tracer
+        perspective camera
+        ray-sphere intersection
+        point light
+        lambertian reflection
+    sampling and filtering
+    cameras
+    shapes
+    lights
+    materials
+
+
+    extra
+        acceleration techniques
+            spacial subdivision / octree
+                cleary's algorithm
+                http://www.cs.otago.ac.nz/cosc342/2016-notes/342-2016lect20.pdf
+            kd-tree
+        procedural surfaces
+            fractals
+            metaballs
+        constructive solid geometry
+
+
+todo
+    generate a sphereflake
+
+
+============================================
+
+
+
+
+https://github.com/flux2341/Aino/tree/master/src/aino
+
+
+https://stackoverflow.com/questions/32911977/prevent-autocomplete-in-visual-studio-code
+// Place your settings in this file to overwrite default and user settings. 
+{
+    // Controls if quick suggestions should show up while typing
+    "editor.quickSuggestions": { "other": false, "comments": false, "strings": false },
+
+    // Controls if suggestions should be accepted with "Enter" - in addition to "Tab". Helps to avoid ambiguity between inserting new lines and accepting suggestions.
+    "editor.acceptSuggestionOnEnter": "off",
+
+    // Controls the delay in ms after which quick suggestions will show up.
+    "editor.quickSuggestionsDelay": 10,
+
+    // Enable word based suggestions
+    "editor.wordBasedSuggestions": false
+}
+
+
+
+
+
+==================================
+overview
+    what is raytracing
+        trace virtual rays of light around a scene to generate images
+        used by pixar
+        rasterization - more computationally efficient
+            gpu
+        may become popular in gaming
+        https://en.wikipedia.org/wiki/Ray_tracing_(graphics)
+    why typescript
+        raytracing naturally lends itself to object-oriented programming
+
+algorithms
+    rasterization
+        https://en.wikipedia.org/wiki/Rasterisation#Rasterisation_of_3D_images
+        https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/overview-rasterization-algorithm
+        radiosity
+        reyes algorithm
+            https://en.wikipedia.org/wiki/Reyes_rendering
+    ray tracing
+        forwards raytracing
+        backwards raytracing
+        path tracing
+            color bleeding
+            https://en.wikipedia.org/wiki/Path_tracing
+        bidirectional raytracing
+        photon mapping
+    
+
+    
+
+
+
+popular raytracers
+    https://en.wikipedia.org/wiki/List_of_ray_tracing_software
+    historic
+        POV-Ray
+        V-Ray
+        Terragen
+            https://planetside.co.uk/terragen-image-gallery/
+        RenderMan
+        Bryce
+        Blender (YafaRay)
+
+        sunflow
+            http://sunflow.sourceforge.net/
+        LuxCoreRender
+            https://luxcorerender.org/
+        https://www.kerkythea.net/cms/index.php/gallery
+        https://www.indigorenderer.com/image
+
+
+
+
+linear algebra
+    coordinate spaces
+    linear transformation
+        multiply a matrix by a vector - columns represent the basis vectors of the new coordinate system
+        homogeneous coordinates
+            https://en.wikipedia.org/wiki/Homogeneous_coordinates
+    there are non-linear transformations, not necessarily invertable
+    vectors
+        dot product
+        cross product
+    normals
+    ray - combination of a point and a vector
+
+
+    quaternion
+
+
+materials
+    lambertian
+    phong
+    blinn-phong
+    reflection
+    refraction
+    
+
+    
+
+    https://en.wikipedia.org/wiki/List_of_common_shading_algorithms
+
+
+sample pattern
+    uniform
+    random
+    stratified
+
+
+
+
+
+shapes
+    spheres
+    cubes
+    triangle meshes
+
+    advanced
+        constructive solid geometry
+        sphereflake
+        menger sponge
+        inside of a reflective cube
+        julia quaternion fractal
+        mandlebulb
+
+aggregates
+    kd-tree
+
+camera
+    depth of field - focal length and aperture
+
+
+links
+    hyperdimensional raytracer in es5 https://codepen.io/flux2341/pen/GEogWd
+    2d raytracer
+        https://codepen.io/flux2341/pen/KEpLML
+        https://codepen.io/flux2341/pen/bZVVGb
+    sampling patterns
+        https://codepen.io/flux2341/pen/aXeMEO
+
+
+
+/* materials - lambertian, specular, mirror,
+ *     
+ *
+ *
+ */
+
+
+cool demos
+    http://madebyevan.com/webgl-path-tracing/
+    https://benedikt-bitterli.me/tantalum/tantalum.html
+
+
+
+https://www.gabrielgambetta.com/computer-graphics-from-scratch/basic-ray-tracing.html
+https://www.flipcode.com/archives/Raytracing_Topics_Techniques-Part_1_Introduction.shtml
+
+https://www.scratchapixel.com/lessons/3d-basic-rendering/introduction-to-ray-tracing
+https://www.scratchapixel.com/lessons/3d-basic-rendering/ray-tracing-overview/
+
+http://aras-p.info/blog/2018/03/28/Daily-Pathtracer-Part-0-Intro/
+https://tmcw.github.io/literate-raytracer/
+
+http://in1weekend.blogspot.com/2016/01/ray-tracing-in-one-weekend.html
+
+
+
+https://www.amazon.com/gp/offer-listing/1568813074/ref=dp_olp_used?ie=UTF8&condition=used
+https://www.routledge.com/Advanced-Global-Illumination/Dutre-Bekaert-Bala/p/book/9780367659417
+
+
+
+// vanilla javascript - dynamic typing
+function add_vanilla(a, b) {
+    let c = a + b
+    return c
+}
+console.log(add_vanilla(5, 2)) // 7
+console.log(add_vanilla('a', 'b')) // ab
+
+// typescript - static typing
+function add_typescript(a: number, b: number): number {
+    let c: number = a + b
+    return c
+}
+console.log(add_typescript(5, 2)) // 7
+console.log(add_typescript('a', 'b')) // error
+

@@ -1,0 +1,16 @@
+
+
+pre-process the large dataset
+words, average rating
+
+
+find words in toxic comments which are not in non-toxic comments, and really not in
+weight the words by the toxicity
+
+calculate the average rating for a given word
+calculate the rating for a phrase
+
+sklearn - countvectorizer, tfidf vectorizer
+naive bayes
+
+
